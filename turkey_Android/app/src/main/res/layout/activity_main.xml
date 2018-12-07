@@ -1,41 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Main2Activity">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:adjustViewBounds="true"
-        android:src="@drawable/splash" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:adjustViewBounds="true"
+            android:src="@drawable/splash" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="60dp"
-            
-            android:text="Button" />
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            android:text="서버시간 확인" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="60dp"
-            android:background="#FFB2D9"
-            android:text="Button" />
+            android:layout_gravity="center"
+            android:background="@drawable/rounded"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:text="공석 알림 예약" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="60dp"
-            android:background="#FFB2D9"
-            android:text="Button" />
+            android:layout_gravity="center"
+            android:background="@drawable/rounded"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:text="강의계획서" />
+    </LinearLayout>
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
