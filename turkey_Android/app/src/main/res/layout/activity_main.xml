@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:adjustViewBounds="true"
-            android:src="@drawable/splash" />
+            android:src="@drawable/banner" />
 
         <Button
             android:id="@+id/button"
