@@ -2,56 +2,17 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:adjustViewBounds="true"
-            android:src="@drawable/banner" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded"
-            android:textColor="#ffffff"
-            android:textSize="30dp"
-            android:text="서버시간 확인" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded"
-            android:textColor="#ffffff"
-            android:layout_marginTop="10dp"
-            android:textSize="30dp"
-            android:text="공석 알림 예약" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded"
-            android:textColor="#ffffff"
-            android:layout_marginTop="10dp"
-            android:textSize="30dp"
-            android:text="강의계획서" />
-    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -60,6 +21,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
+        app:layout_behavior="tech.thdev.app.view.BottomNavigationBehavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
