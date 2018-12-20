@@ -38,6 +38,7 @@
             android:textColor="#ffffff"
             android:layout_marginTop="10dp"
             android:textSize="30dp"
+
             android:text="공석 알림 예약" />
 
         <Button

@@ -1,6 +1,13 @@
 package org.techtown.turkey_android;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
@@ -9,14 +16,22 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
-import android.widget.TextView;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentA fragment_A;
     FragmentB fragment_B;
     FragmentC fragment_C;
-
+    static final int G_NOTIFY_NUM = 1;
     private ViewPager mViewPager;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -58,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = new Intent(
+                getApplicationContext(),//현재제어권자
+                VacancyNotification.class); // 이동할 컴포넌트
+        startService(intent); // 서비스 시작
 
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         mViewPager=(ViewPager)findViewById(R.id.fragment_container);
@@ -97,5 +117,6 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(fragment_C);
         viewPager.setAdapter(viewPagerAdapter);
     }
+
 
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.techtown.turkey_android.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/number"
+        android:text="number"
+         />
+
+    <TextView
+        android:id="@+id/title1"
+        android:text="title"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:textSize="15sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:text="professor"
+        android:id="@+id/professor"
+        android:textSize="15sp"
+        android:gravity="center"
+         />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:text="total"
+        android:id="@+id/total"
+        android:textSize="15sp"
+        android:gravity="center"
+         />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:text="applicant"
+        android:id="@+id/applicant"
+        android:textSize="15sp"
+        android:gravity="center"
+         />
+
+
+
+    <CheckBox
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:id="@+id/checkBox1"
+        android:gravity="right|center"
+        android:focusable="false"
+        android:clickable="false"
+        />
+
+</org.techtown.turkey_android.CheckableLinearLayout>
