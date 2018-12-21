@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentC">
-    <TableRow>
-    <EditText
-        android:layout_width="0dp"
+
+    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/c_edittext"
+                android:layout_weight="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="과목코드를 입력하세요." />
+
+            <Button
+                android:id="@+id/c_search"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="검색" />
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_weight="3"
         android:hint="과목코드를 입력하세요."/>
 
@@ -37,3 +73,38 @@
 
 
 </TableLayout>
+=======
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="글 제목"
+            android:textAlignment="center"
+            android:layout_weight="4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/c_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </ListView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:textColor="#ffffff"
+        android:text="글 작성"/>
+</LinearLayout>
+</FrameLayout>
+>>>>>>> 6dbea34f0beaea3eeaefda1406949ede84ee1758

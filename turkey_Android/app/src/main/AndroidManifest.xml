@@ -26,6 +26,7 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".NotificationActivity" />
+<<<<<<< HEAD
         <activity android:name=".test" />
         <activity android:name=".BookingList" />
 
@@ -33,6 +34,10 @@
 
         <activity android:name=".subject_change_write" />
         <activity android:name=".subject_change_read" />
+=======
+        <activity android:name=".BookingList"/>
+        <service android:name="VacancyNotification"></service>
+>>>>>>> 6dbea34f0beaea3eeaefda1406949ede84ee1758
     </application>
 
 </manifest>
