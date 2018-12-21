@@ -10,13 +10,30 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:hint="과목코드를 입력하세요."/>
-    <Button
+
+        <Button
+        android:id="@+id/f_c_btn_search"
+        android:background="@drawable/rounded"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="검색"/>
+        android:text="검색" />
+        <Button
+            android:id="@+id/f_c_btn_write"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:background="@drawable/rounded"
+            android:text="글쓰기" />
+
     </TableRow>
-    <TableRow>
-        <ListView></ListView>
-    </TableRow>
+    <ListView
+        android:id="@+id/listview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice">
+
+    </ListView>
+
+
 </TableLayout>
