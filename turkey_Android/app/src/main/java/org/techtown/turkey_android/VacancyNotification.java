@@ -1,14 +1,17 @@
 package org.techtown.turkey_android;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -186,17 +189,42 @@ public class VacancyNotification extends Service {
                     //Toast.makeText(getApplicationContext(),checkedApplicant,Toast.LENGTH_SHORT).show();
                     if(Integer.parseInt(applicant)<Integer.parseInt(checkedApplicant))//현재 지원자 수 줄었을 경우
                     {
+                        String channelId = "channel";
+                        String channelName = "Channel Name";
+
+                        m_NotiManager
+                                = (NotificationManager) getSystemService  (Context.NOTIFICATION_SERVICE);
+
+
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+                            int importance = NotificationManager.IMPORTANCE_HIGH;
+
+                            NotificationChannel mChannel = new NotificationChannel(
+                                    channelId, channelName, importance);
+
+                            m_NotiManager.createNotificationChannel(mChannel);
+
+                        }
+
+                        NotificationCompat.Builder builder =
+                                new NotificationCompat.Builder(getApplicationContext(), channelId);
+
                         int icon=VacancyNotification.this.getApplicationInfo().icon;
-                        Intent intent=new Intent(VacancyNotification.this,MainActivity.class);
+
+                        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        PendingIntent content =PendingIntent.getActivity(VacancyNotification.this,0,intent,0);
-                        Notification notification=new Notification.Builder(VacancyNotification.this)
-                                .setContentTitle("공석 알림 : "+number+" "+title)
+                        PendingIntent content =PendingIntent.getActivity(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+                        builder.setContentTitle("공석 알림 : "+number+" "+title)
                                 .setContentText("정원 : "+total+"석     "+checkedApplicant+"석->"+applicant+"석 공석 발생! 서두르세요")
                                 .setSmallIcon(icon)
+                                .setDefaults(Notification.DEFAULT_ALL)
+                                .setBadgeIconType(R.drawable.appicon)
                                 .setContentIntent(content)
-                                .build();
-                        m_NotiManager.notify(MainActivity.G_NOTIFY_NUM,notification);
+                                .setAutoCancel(true);
+                        m_NotiManager.notify(0,builder.build());
+
                         String sql="UPDATE lecture SET applicant='"+applicant+"' WHERE number='"+number+"';";
                         db.close();
                         db = openOrCreateDatabase(
