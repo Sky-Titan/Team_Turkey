@@ -26,7 +26,6 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".NotificationActivity" />
-        <activity android:name=".test" />
         <activity android:name=".BookingList" />
 
         <service android:name=".VacancyNotification" />
