@@ -55,6 +55,7 @@ public class VacancyNotification extends Service {
         Thread thread=new Thread(new VacancyNotify());
         thread.setDaemon(false);
         thread.start();
+        startForeground(1,new Notification());
         // 서비스에서 가장 먼저 호출됨(최초에 한번만)
 
     }
@@ -68,7 +69,7 @@ public class VacancyNotification extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+        stopForeground(true);
 
     }
 

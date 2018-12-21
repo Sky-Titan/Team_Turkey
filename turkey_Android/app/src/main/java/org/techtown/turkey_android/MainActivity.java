@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
@@ -74,11 +75,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            getApplicationContext().startForegroundService(new Intent(getApplicationContext(), VacancyNotification.class));
+        } else {
+            getApplicationContext().startService(new Intent(getApplicationContext(), VacancyNotification.class));
+        }
+
+        /*Intent intent = new Intent(
                 getApplicationContext(),//현재제어권자
                 VacancyNotification.class); // 이동할 컴포넌트
         startService(intent); // 서비스 시작
-
+        */
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         mViewPager=(ViewPager)findViewById(R.id.fragment_container);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
