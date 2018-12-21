@@ -64,10 +64,11 @@ public class PostViewAdapter extends BaseAdapter {
     }
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(String id, String title,String content,String password) {
+    public void addItem(String id, String number,String title,String content,String password) {
         PostViewItem item = new PostViewItem();
 
         item.setId(id);
+        item.setNumber(number);
         item.setTitle(title);
         item.setContent(content);
         item.setPassword(password);

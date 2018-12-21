@@ -5,6 +5,15 @@ public class PostViewItem {
     String title;
     String content;
     String password;
+    String number;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
     public String getId() {
         return id;
