@@ -25,7 +25,6 @@ public class NotificationActivity extends AppCompatActivity {
 
     String myJSON;
     SQLiteDatabase db;
-    static final int G_NOTIFY_NUM = 1;
 
     private static final String TAG_RESULTS = "result";
     private static final String TAG_NUMBER = "number";
@@ -88,7 +87,6 @@ public class NotificationActivity extends AppCompatActivity {
                     lectures = jsonObj.getJSONArray(TAG_RESULTS);
 
                     JSONObject c = lectures.getJSONObject(0);
-                    String number_new = c.getString(TAG_NUMBER);
                     String applicant_new = c.getString(TAG_APPLICANT);
                     applicant=applicant_new;
 
@@ -109,36 +107,6 @@ public class NotificationActivity extends AppCompatActivity {
     //예약리스트 클릭시
     public void checkList(View v){
         InsertDB(null);
-        /*String number="";
-        String applicant="";
-        String sql;
-        View view = getLayoutInflater().inflate(R.layout.activity_main,null);
-        search(null);
-        db = openOrCreateDatabase(
-                "test.db",
-                SQLiteDatabase.CREATE_IF_NECESSARY,
-                null);
-
-        db.execSQL("DROP TABLE IF EXISTS lecture;");
-        db.execSQL("CREATE TABLE IF NOT EXISTS lecture"
-                +"(number TEXT,applicant TEXT);");
-
-        for(int i=0;i<adapter.getCount();i++)
-        {
-
-            if(listview.isItemChecked(i))
-            {
-                ListViewItem item = (ListViewItem)adapter.getItem(i);
-                number=item.getNumber();
-                applicant=item.getApplicant();
-                sql="INSERT INTO lecture (number,applicant) VALUES('"+number+"','"+applicant+"');";
-                db.execSQL(sql);
-            }
-        }
-
-        if(db!=null){
-            db.close();
-        }*/
         //자동으로 local db에 insert후 intent로 새 bookingList액티비티 띄움
         Intent intent=new Intent(NotificationActivity.this,BookingList.class);
         startActivity(intent);
@@ -158,8 +126,6 @@ public class NotificationActivity extends AppCompatActivity {
         listview.setAdapter(adapter);
 
         loadDB();
-        // 첫 번째 아이템 추가.
-        // adapter.addItem("CLTR210001","명저읽기와 토론","박충환","30","14");
         getData("http://119.201.56.98/select_lecture.php");//수정
 
     }
