@@ -20,14 +20,16 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentC extends Fragment {
+public class FragmentC extends Fragment{
 
     String myJSON;
     JSONArray posts = null;
@@ -38,6 +40,7 @@ public class FragmentC extends Fragment {
     PostViewAdapter adapter;
     private static final String TAG_RESULTS = "result";
     private static final String TAG_ID = "id";
+    private static final String TAG_NUMBER = "number";
     private static final String TAG_TITLE = "title";
     private static final String TAG_CONTENT = "content";
     private static final String TAG_PASSWORD = "password";
@@ -70,12 +73,12 @@ public class FragmentC extends Fragment {
                 {
                     adapter = new PostViewAdapter() ;
                     listview.setAdapter(adapter);
-                    getData("http://119.201.56.98/select_post.php");
+                    getData("http://119.201.56.98/select_post_2.php");
 
                 }
                 else//검색어가 존재 할 시
                 {
-                    getData2("http://119.201.56.98/select_lecture.php");//SEARCH 용도의 getdata
+                    getData2("http://119.201.56.98/select_post_2.php");//SEARCH 용도의 getdata
                     adapter = new PostViewAdapter() ;
                     listview.setAdapter(adapter);
                     try{
@@ -85,13 +88,14 @@ public class FragmentC extends Fragment {
                         for(int i =0;i< posts.length();i++){
                             JSONObject c = posts.getJSONObject(i);
                             String id = c.getString(TAG_ID);
+                            String number = c.getString(TAG_NUMBER);
                             String title = c.getString(TAG_TITLE);
                             String content = c.getString(TAG_CONTENT);
                             String password = c.getString(TAG_PASSWORD);
 
                             if(title.contains(editText.getText().toString()))//해당 교과목번호에 검색어가 포함이 되어있으면 추가
                             {
-                                adapter.addItem(id,title,content,password);
+                                adapter.addItem(id,number,title,content,password);
                             }
 
                         }
@@ -105,7 +109,7 @@ public class FragmentC extends Fragment {
         adapter=new PostViewAdapter();
         listview = (ListView) view.findViewById(R.id.listview1);
         listview.setAdapter(adapter);
-        getData("http://119.201.56.98/select_post.php");
+        getData("http://119.201.56.98/select_post_2.php");
         return view;
     }
 
@@ -181,11 +185,12 @@ public class FragmentC extends Fragment {
             for(int i =0;i< posts.length();i++){
                 JSONObject c = posts.getJSONObject(i);
                 String id = c.getString(TAG_ID);
+                String number = c.getString(TAG_NUMBER);
                 String title = c.getString(TAG_TITLE);
                 String content = c.getString(TAG_CONTENT);
                 String password = c.getString(TAG_PASSWORD);
 
-                adapter.addItem(id,title,content,password);
+                adapter.addItem(id,number,title,content,password);
 
             }
             listview.setAdapter(adapter);
