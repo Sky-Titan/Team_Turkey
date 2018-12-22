@@ -1,2 +1,8 @@
 https://thdev.net/714 bottomnavigationview 사용
 http://yoo-hyeok.tistory.com/16?category=708422 php-안드로이드-mysql 서버구축
+
+https://coding-factory.tistory.com/entry/Android-%EB%84%A4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EB%93%9C%EB%A1%9C%EC%96%B4Navigation-Drawer-%EC%82%AC%EC%9A%A9%EB%B2%95
+네비게이션 드로어 사용법
+
+https://coding-factory.tistory.com/entry/Android-ViewPager%EC%99%80-Fragment%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-UI-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0
+ViewPager 사용법
