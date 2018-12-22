@@ -33,6 +33,8 @@
         <activity android:name=".subject_change_write" />
         <activity android:name=".subject_change_read" />
         <activity android:name=".board_subject" />
+        <activity android:name=".board_subject_read" />
+        <activity android:name=".board_subject_write"></activity>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     tools:context=".board_subject">
     <TableRow>
         <EditText
-            android:id="@+id/post_edit"
+            android:id="@+id/b_s_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -15,22 +15,24 @@
             android:hint="글 제목을 입력하세요."/>
 
         <Button
-            android:id="@+id/f_c_btn_search"
+            android:id="@+id/b_s_btn_search"
             android:background="@drawable/rounded"
             android:layout_weight="1"
             android:layout_marginTop="5dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="검색" />
+            android:text="검색"
+            android:onClick="b_s_search"/>
         <Button
-            android:id="@+id/f_c_btn_write"
+            android:id="@+id/b_s_btn_write"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/rounded"
-            android:text="글쓰기" />
+            android:text="글쓰기"
+            android:onClick="b_s_write"/>
 
     </TableRow>
     <LinearLayout
@@ -52,10 +54,11 @@
             android:layout_height="match_parent" />
     </LinearLayout>
     <ListView
-        android:id="@+id/listview1"
+        android:id="@+id/listview_bs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:choiceMode="multipleChoice">
+        android:choiceMode="multipleChoice"
+        >
 
     </ListView>
 </TableLayout>
