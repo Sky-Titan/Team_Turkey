@@ -28,7 +28,7 @@ public class board_subject extends AppCompatActivity {
 
     ListView listview;
     PostViewAdapter adapter;
-
+    String subjectNumber;
     private static final String TAG_RESULTS = "result";
     private static final String TAG_ID = "id";
     private static final String TAG_NUMBER = "number";
@@ -41,13 +41,17 @@ public class board_subject extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board_subject);
+
         editText=(EditText)findViewById(R.id.b_s_edit);
         Intent intent_bs = getIntent();
-        number = intent_bs.getExtras().getString("subjectNumber");// intent로 board_subject로부터 subjectNumber 값을 가져옴
+
+        subjectNumber = intent_bs.getExtras().getString("subjectNumber");// intent로 board_subject로부터 subjectNumber 값을 가져옴
+
         adapter=new PostViewAdapter();
-        listview = (ListView)findViewById(R.id.listview1);
+        listview = (ListView)findViewById(R.id.listview_bs);
         listview.setAdapter(adapter);
-        getData("http://119.201.56.98/select_post_2.php");
+
+        getData("http://119.201.56.98/select_post.php");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -66,7 +70,7 @@ public class board_subject extends AppCompatActivity {
     public void b_s_write(View view)
     {
         Intent intent_sw = new Intent(this,board_subject_write.class);
-        intent_sw.putExtra("subjectNumber",number);
+        intent_sw.putExtra("subjectNumber",subjectNumber);
         startActivity(intent_sw);
     }
 
@@ -76,12 +80,12 @@ public class board_subject extends AppCompatActivity {
                 {
                     adapter = new PostViewAdapter() ;
                     listview.setAdapter(adapter);
-                    getData("http://119.201.56.98/select_post_2.php");//php 수정필요
+                    getData("http://119.201.56.98/select_post.php");//php 수정필요
 
                 }
                 else//검색어가 존재 할 시
                 {
-                    getData2("http://119.201.56.98/select_post_2.php");//php 수정필요
+                    getData2("http://119.201.56.98/select_post.php");//php 수정필요
                     adapter = new PostViewAdapter() ;
                     listview.setAdapter(adapter);
                     try{
@@ -190,6 +194,7 @@ public class board_subject extends AppCompatActivity {
                 String content = c.getString(TAG_CONTENT);
                 String password = c.getString(TAG_PASSWORD);
 
+                if(subjectNumber.equals(number))
                 adapter.addItem(id,number,title,content,password);
 
             }

@@ -43,7 +43,7 @@ public class board_subject_write extends AppCompatActivity {
             String content = bsw_content.getText().toString();
             String password = bsw_password.getText().toString();
             board_subject_write.InsertData task = new board_subject_write.InsertData();
-            task.execute("http://119.201.56.98/insert_post_2.php",number,title,content,password);//php수정필요함
+            task.execute("http://119.201.56.98/insert_post.php",number,title,content,password);//php수정필요함
             Toast.makeText(getApplicationContext(), "추가했습니다.", Toast.LENGTH_SHORT).show();
 
             finish();

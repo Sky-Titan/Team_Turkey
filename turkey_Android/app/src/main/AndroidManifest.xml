@@ -34,7 +34,7 @@
         <activity android:name=".subject_change_read" />
         <activity android:name=".board_subject" />
         <activity android:name=".board_subject_read" />
-        <activity android:name=".board_subject_write"></activity>
+        <activity android:name=".board_subject_write" />
     </application>
 
 </manifest>

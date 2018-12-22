@@ -8,7 +8,7 @@ tools:context=".FragmentB">
 <TableRow>
 
     <EditText
-        android:id="@+id/post_edit"
+        android:id="@+id/lecture_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -16,7 +16,7 @@ tools:context=".FragmentB">
         android:hint="강의코드나 강의명를 입력하세요."/>
 
     <Button
-        android:id="@+id/f_c_btn_search"
+        android:id="@+id/lecture_search"
         android:background="@drawable/rounded"
         android:layout_weight="1"
         android:layout_marginTop="5dp"
@@ -38,12 +38,13 @@ tools:context=".FragmentB">
     <TextView
         android:layout_weight="1"
         android:text="강의명"
-        android:gravity="center"
+        android:layout_marginLeft="70dp"
+        android:gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
 </LinearLayout>
 <ListView
-    android:id="@+id/listview1"
+    android:id="@+id/listview_lectures"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:choiceMode="multipleChoice">
