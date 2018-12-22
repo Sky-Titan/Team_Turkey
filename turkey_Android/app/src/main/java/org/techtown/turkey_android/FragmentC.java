@@ -107,6 +107,7 @@ public class FragmentC extends Fragment{
                 }
             }
         });
+
         adapter=new PostViewAdapter();
         listview = (ListView) view.findViewById(R.id.listview1);
         listview.setAdapter(adapter);
