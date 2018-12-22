@@ -109,36 +109,6 @@ public class NotificationActivity extends AppCompatActivity {
     //예약리스트 클릭시
     public void checkList(View v){
         InsertDB(null);
-        /*String number="";
-        String applicant="";
-        String sql;
-        View view = getLayoutInflater().inflate(R.layout.activity_main,null);
-        search(null);
-        db = openOrCreateDatabase(
-                "test.db",
-                SQLiteDatabase.CREATE_IF_NECESSARY,
-                null);
-
-        db.execSQL("DROP TABLE IF EXISTS lecture;");
-        db.execSQL("CREATE TABLE IF NOT EXISTS lecture"
-                +"(number TEXT,applicant TEXT);");
-
-        for(int i=0;i<adapter.getCount();i++)
-        {
-
-            if(listview.isItemChecked(i))
-            {
-                ListViewItem item = (ListViewItem)adapter.getItem(i);
-                number=item.getNumber();
-                applicant=item.getApplicant();
-                sql="INSERT INTO lecture (number,applicant) VALUES('"+number+"','"+applicant+"');";
-                db.execSQL(sql);
-            }
-        }
-
-        if(db!=null){
-            db.close();
-        }*/
         //자동으로 local db에 insert후 intent로 새 bookingList액티비티 띄움
         Intent intent=new Intent(NotificationActivity.this,BookingList.class);
         startActivity(intent);
