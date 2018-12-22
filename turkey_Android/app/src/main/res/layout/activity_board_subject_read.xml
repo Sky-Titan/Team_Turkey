@@ -23,6 +23,7 @@
         android:textColor="#4374D9"/>
 
     <TextView
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bsr_title" />
@@ -36,6 +37,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:id="@+id/bsr_subjectNumber" />
     <TextView
         android:layout_width="wrap_content"
@@ -46,6 +48,7 @@
 
     <TextView
         android:id="@+id/bsr_content"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
@@ -67,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/bsr_password"
+                android:inputType="textPassword"
                 android:layout_weight="1"/>
             <Button
                 android:id="@+id/bsr_del"
@@ -77,6 +81,56 @@
                 android:onClick="bsr_del"
                 android:text="삭제" />
         </TableRow>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/comment_edit"
+                        android:layout_weight="6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="댓글내용"/>
+
+                    <EditText
+                        android:id="@+id/comment_pw_edit"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="댓글 비밀번호"/>
+                </LinearLayout>
+                <Button
+                    android:layout_weight="1"
+                    android:text="댓글작성"
+                    android:layout_marginTop="10dp"
+                    android:onClick="write_comment"
+                    android:background="@drawable/rounded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    />
+            </TableRow>
+
+        </TableLayout>
+        <ListView
+            android:id="@+id/listview_comments"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="bottom"
+            android:choiceMode="multipleChoice">
+        </ListView>
 
     </TableLayout>
 

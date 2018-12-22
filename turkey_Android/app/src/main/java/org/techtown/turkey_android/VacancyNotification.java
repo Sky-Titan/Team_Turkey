@@ -215,7 +215,7 @@ public class VacancyNotification extends Service {
 
                         Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        PendingIntent content =PendingIntent.getActivity(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                        PendingIntent content =PendingIntent.getActivity(VacancyNotification.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
                         builder.setContentTitle("공석 알림 : "+number+" "+title)
                                 .setContentText("정원 : "+total+"석     "+checkedApplicant+"석->"+applicant+"석 공석 발생! 서두르세요")
@@ -224,7 +224,7 @@ public class VacancyNotification extends Service {
                                 .setBadgeIconType(R.drawable.appicon)
                                 .setContentIntent(content)
                                 .setAutoCancel(true);
-                        m_NotiManager.notify(0,builder.build());
+                        m_NotiManager.notify(1,builder.build());
 
                         String sql="UPDATE lecture SET applicant='"+applicant+"' WHERE number='"+number+"';";
                         db.close();

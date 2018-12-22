@@ -79,7 +79,7 @@ public class NotificationActivity extends AppCompatActivity {
                 ListViewItem item = (ListViewItem)adapter.getItem(i);
                 number=item.getNumber();
                 applicant=item.getApplicant();
-
+                String applicant_new="";
                 String uri="http://119.201.56.98/select_checked_lecture.php?number0="+number;
                 getData2(uri);
 
@@ -89,13 +89,13 @@ public class NotificationActivity extends AppCompatActivity {
 
                     JSONObject c = lectures.getJSONObject(0);
                     String number_new = c.getString(TAG_NUMBER);
-                    String applicant_new = c.getString(TAG_APPLICANT);
+                    applicant_new = c.getString(TAG_APPLICANT);
                     applicant=applicant_new;
 
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
-                sql="INSERT INTO lecture (number,applicant) VALUES('"+number+"','"+applicant+"');";
+                sql="INSERT INTO lecture (number,applicant) VALUES('"+number+"','"+applicant_new+"');";
                 db.execSQL(sql);
                 count++;
             }
