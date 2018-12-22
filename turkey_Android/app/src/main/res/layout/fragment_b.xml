@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".FragmentB">
+
+<TableRow>
+
+    <EditText
+        android:id="@+id/post_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="3"
+        android:hint="강의코드나 강의명를 입력하세요."/>
+
+    <Button
+        android:id="@+id/f_c_btn_search"
+        android:background="@drawable/rounded"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="검색" />
+</TableRow>
+<LinearLayout
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FragmentB">
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_weight="1"
+        android:text="강의코드"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_weight="1"
+        android:text="강의명"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</LinearLayout>
+<ListView
+    android:id="@+id/listview1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:choiceMode="multipleChoice">
+</ListView>
 
-</FrameLayout>
+
+</TableLayout>

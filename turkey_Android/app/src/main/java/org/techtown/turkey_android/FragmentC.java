@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -110,6 +111,18 @@ public class FragmentC extends Fragment{
         listview = (ListView) view.findViewById(R.id.listview1);
         listview.setAdapter(adapter);
         getData("http://119.201.56.98/select_post_2.php");
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                PostViewItem  item = (PostViewItem)adapter.getItem(pos);
+                String id=item.getId();
+                Intent intent=new Intent(getActivity(), subject_change_read.class);
+                startActivity(intent);
+                intent.putExtra("id",id);
+            }
+        }) ;
+
         return view;
     }
 

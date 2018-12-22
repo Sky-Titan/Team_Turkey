@@ -6,7 +6,6 @@
     tools:context=".FragmentC">
 
     <TableRow>
-
     <EditText
         android:id="@+id/post_edit"
         android:layout_width="0dp"
