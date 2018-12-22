@@ -118,8 +118,9 @@ public class FragmentC extends Fragment{
                 PostViewItem  item = (PostViewItem)adapter.getItem(pos);
                 String id=item.getId();
                 Intent intent=new Intent(getActivity(), subject_change_read.class);
-                startActivity(intent);
                 intent.putExtra("id",id);
+                startActivity(intent);
+
             }
         }) ;
 
