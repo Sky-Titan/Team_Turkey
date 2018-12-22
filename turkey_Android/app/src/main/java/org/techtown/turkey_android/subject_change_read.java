@@ -139,7 +139,7 @@ public class subject_change_read extends AppCompatActivity {
         EditText scr_password = (EditText)findViewById(R.id.scr_password);
 
 
-        if(scr_password.getText().toString()==password2check) {
+        if(scr_password.getText().toString().equals(password2check)) {
             DeleteData task = new DeleteData();
             task.execute("http://119.201.56.98/delete_post_2.php",check_id);
             Toast.makeText(getApplicationContext(), "삭제되었습니다.", Toast.LENGTH_SHORT).show();
