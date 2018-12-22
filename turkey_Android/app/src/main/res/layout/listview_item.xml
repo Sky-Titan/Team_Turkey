@@ -17,8 +17,7 @@
     <TextView
         android:id="@+id/title1"
         android:text="title"
-        android:layout_marginLeft="10dp"
-        android:layout_width="140dp"
+        android:layout_width="130dp"
         android:layout_height="match_parent"
         android:textSize="15sp"
         android:gravity="center"
@@ -34,7 +33,7 @@
          />
 
     <TextView
-        android:layout_width="30dp"
+        android:layout_width="20dp"
         android:layout_height="match_parent"
 
         android:text="total"
@@ -44,7 +43,7 @@
          />
 
     <TextView
-        android:layout_width="30dp"
+        android:layout_width="20dp"
         android:layout_height="match_parent"
 
         android:text="applicant"
@@ -58,7 +57,6 @@
         android:id="@+id/checkBox1"
         android:layout_width="30dp"
         android:layout_height="match_parent"
-
         android:clickable="false"
         android:focusable="false"
         android:gravity="center" />

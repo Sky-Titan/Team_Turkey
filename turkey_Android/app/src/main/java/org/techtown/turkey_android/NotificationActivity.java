@@ -104,7 +104,16 @@ public class NotificationActivity extends AppCompatActivity {
         if(db!=null){
             db.close();
         }
-        search(null);
+        if(count==0)
+        {
+            onResume();
+            Intent intent = new Intent(NotificationActivity.this, NotificationActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+
+        }
+        else
+            search(null);
     }
     //예약리스트 클릭시
     public void checkList(View v){
@@ -281,6 +290,7 @@ public class NotificationActivity extends AppCompatActivity {
                 {
                     listview.setItemChecked(adapter.getCount()-1,true);
                 }
+
             }
             if(db!=null){
                 db.close();

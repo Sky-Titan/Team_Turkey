@@ -32,7 +32,7 @@ public class FragmentA extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://time.navyism.com/?host=sugang.knu.ac.kr"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.knupark.com/time/time.php"));//"https://time.navyism.com/?host=sugang.knu.ac.kr"
                 startActivity(intent);
             }
         });
