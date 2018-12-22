@@ -75,7 +75,6 @@ public class FragmentC extends Fragment{
                     adapter = new PostViewAdapter() ;
                     listview.setAdapter(adapter);
                     getData("http://119.201.56.98/select_post_2.php");
-
                 }
                 else//검색어가 존재 할 시
                 {
